@@ -2,11 +2,14 @@
 
 This is a IAC project for CDK development with TypeScript.
 
-This iac project is for building test staging environment automatically. When the test start, we build the environment using cdk . After the test , we destroy the environment using cdk. We build this project for cost optimization.
+This iac project is for building test staging environment automatically. When the test start, we build the environment using cdk . After the test , we destroy the environment using cdk. We build this project for cost optimization. We can use devops tools to schedule this project.
 
 In reality, the whole environment is  including ec2, alb, rds, s3 , cloudfront  and IOT core etc. The resources is divided in three catergories . 
+
 1 resouces are charged when they are build , such as ec2,alb,rds. We build resource using iac code. 
+
 2 resource are charged with on demand request, such as cloudfront. It is free after we build the cloudfront without using it.So we build them manually once.
+
 3 resource are very cheap or totally free, such as s3, VPC, subnet, security group ,acm certificate. We build them once manully.
 
 So this project only build ec2, alb,rds automatically with iac code . For all the other resource , we build them manually and config their info in the IAC code.
